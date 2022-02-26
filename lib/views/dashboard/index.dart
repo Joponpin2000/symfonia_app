@@ -13,7 +13,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  int tabIndex = 0;
+  int activeTabIndex = 0;
 
   var pages = [
     const History(),
@@ -25,11 +25,12 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[tabIndex],
+      body: pages[activeTabIndex],
       bottomNavigationBar: BottomBar(
+        activeIndex: activeTabIndex,
         handleClick: (index) => setState(
           () {
-            tabIndex = index;
+            activeTabIndex = index;
           },
         ),
       ),
