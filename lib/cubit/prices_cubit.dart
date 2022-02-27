@@ -1,8 +1,18 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import '/models/price.dart';
+import '/repositories/price_repository.dart';
 
 part 'prices_state.dart';
 
 class PricesCubit extends Cubit<PricesState> {
-  PricesCubit() : super(PricesInitial());
+  final PriceRepository repository;
+
+  PricesCubit({required this.repository}) : super(PricesInitial());
+
+  void fetchPrices() {
+    repository.fetchPrices().then((prices) => {
+      emit(PricesLoaded(prices: prices))
+    });
+  }
 }

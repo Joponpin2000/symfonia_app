@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import '/widgets/crypto_tile.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '/cubit/prices_cubit.dart';
+import '/widgets/price_tile.dart';
 
 class History extends StatelessWidget {
   const History({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<PricesCubit>(context).fetchPrices();
+
     return SafeArea(
       child: Container(
         padding: const EdgeInsets.all(25),
@@ -37,12 +41,36 @@ class History extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (context, index) => const CryptoTile(),
+              child:
+                  // ListView.builder(
+                  //   shrinkWrap: true,
+                  //   itemCount: 10,
+                  //   itemBuilder: (context, index) =>
+                  BlocBuilder<PricesCubit, PricesState>(
+                builder: (context, state) {
+                  if (state is! PricesLoaded) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+
+                  final prices = state.prices;
+
+                  return SingleChildScrollView(
+                    child: Column(
+                      children: prices
+                          .map(
+                            (p) => PriceTile(
+                              price: p,
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  );
+                },
               ),
             ),
+            // ),
           ],
         ),
       ),
