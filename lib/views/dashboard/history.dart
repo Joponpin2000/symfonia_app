@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:symfonia_app/widgets/crypto_tile.dart';
+import '/widgets/crypto_tile.dart';
 
 class History extends StatelessWidget {
   const History({Key? key}) : super(key: key);

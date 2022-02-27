@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 
-class BottomBar extends StatefulWidget {
+class BottomBar extends StatelessWidget {
   final Function handleClick;
   final int activeIndex;
   const BottomBar(
       {Key? key, required this.handleClick, required this.activeIndex})
       : super(key: key);
-
-  @override
-  State<BottomBar> createState() => _BottomBarState();
-}
-
-class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -19,7 +13,7 @@ class _BottomBarState extends State<BottomBar> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.bar_chart,
-            color: widget.activeIndex == 0
+            color: activeIndex == 0
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).accentColor,
             size: 30,
@@ -29,7 +23,7 @@ class _BottomBarState extends State<BottomBar> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.language,
-            color: widget.activeIndex == 1
+            color: activeIndex == 1
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).accentColor,
             size: 30,
@@ -41,7 +35,7 @@ class _BottomBarState extends State<BottomBar> {
             children: [
               Icon(
                 Icons.notifications_none,
-                color: widget.activeIndex == 2
+                color: activeIndex == 2
                     ? Theme.of(context).primaryColor
                     : Theme.of(context).accentColor,
                 size: 30,
@@ -67,7 +61,7 @@ class _BottomBarState extends State<BottomBar> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.person_outline,
-            color: widget.activeIndex == 3
+            color: activeIndex == 3
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).accentColor,
             size: 30,
@@ -75,7 +69,7 @@ class _BottomBarState extends State<BottomBar> {
           label: "",
         ),
       ],
-      onTap: (index) => widget.handleClick(index),
+      onTap: (index) => handleClick(index),
       backgroundColor: Colors.white,
     );
   }

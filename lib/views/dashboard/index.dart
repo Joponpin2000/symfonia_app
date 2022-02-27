@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '/views/dashboard/account.dart';
-import '/views/dashboard/browse.dart';
 import '/views/dashboard/history.dart';
+import '/views/dashboard/browse.dart';
 import '/views/dashboard/notifications.dart';
+import '/views/dashboard/account.dart';
 import '/widgets/bottom_nav.dart';
 
 class Dashboard extends StatefulWidget {
@@ -15,11 +15,11 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   int activeTabIndex = 0;
 
-  var pages = [
-    const History(),
-    const Browse(),
-    const Notifications(),
-    const Account(),
+  static const pages = [
+    History(),
+    Browse(),
+    Notifications(),
+    Account(),
   ];
 
   @override
