@@ -22,6 +22,7 @@ class _BottomBarState extends State<BottomBar> {
             color: widget.activeIndex == 0
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).accentColor,
+            size: 30,
           ),
           label: "",
         ),
@@ -31,31 +32,33 @@ class _BottomBarState extends State<BottomBar> {
             color: widget.activeIndex == 1
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).accentColor,
+            size: 30,
           ),
           label: "",
         ),
         BottomNavigationBarItem(
           icon: Stack(
             children: [
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                    color: Colors.red,
-                    ),
-                    child: Text(
-                      "13",
-                      style: TextStyle(color: Colors.white),
-                    )),
-              ),
               Icon(
                 Icons.notifications_none,
                 color: widget.activeIndex == 2
                     ? Theme.of(context).primaryColor
                     : Theme.of(context).accentColor,
+                size: 30,
+              ),
+              Positioned(
+                top: 0,
+                right: 0,
+                child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 2),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Colors.red,
+                    ),
+                    child: const Text(
+                      "13",
+                      style: TextStyle(color: Colors.white),
+                    )),
               ),
             ],
           ),
@@ -67,6 +70,7 @@ class _BottomBarState extends State<BottomBar> {
             color: widget.activeIndex == 3
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).accentColor,
+            size: 30,
           ),
           label: "",
         ),
