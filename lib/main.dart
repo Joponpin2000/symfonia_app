@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '/utils/router.dart';
-import 'utils/app_theme.dart';
+import '/constants/router.dart';
+import '/constants/app_theme.dart';
 
 void main() {
   runApp(SymfoniaApp(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Browse extends StatelessWidget {
-  const Browse({Key? key}) : super(key: key);
+class BrowseScreen extends StatelessWidget {
+  const BrowseScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -16,13 +16,13 @@ class PriceTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width * 0.7,
+            width: MediaQuery.of(context).size.width * 0.65,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.2,
+                  width: MediaQuery.of(context).size.width * 0.18,
                   height: 110,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -36,15 +36,15 @@ class PriceTile extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.45,
+                  width: MediaQuery.of(context).size.width * 0.43,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Received",
+                        price.priceChange >= 0 ? "Received" : "Sent",
                         style: TextStyle(
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).colorScheme.secondary,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -63,7 +63,7 @@ class PriceTile extends StatelessWidget {
                           DateTime.parse(price.lastUpdated),
                         ),
                         style: TextStyle(
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).colorScheme.secondary,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -74,13 +74,12 @@ class PriceTile extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width * 0.15,
+            width: MediaQuery.of(context).size.width * 0.2,
             child: Text(
-              price.priceChange.toString().length > 4
-                  ? price.priceChange.toString().substring(1, 5)
-                  : price.priceChange.toString(),
-              style: const TextStyle(
-                color: Colors.green,
+              price.priceChange.toStringAsFixed(2),
+              textAlign: TextAlign.end,
+              style: TextStyle(
+                color: price.priceChange >= 0 ? Colors.green : Colors.red,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '/cubit/prices_cubit.dart';
-import '/widgets/price_tile.dart';
+import '/presentation/widgets/price_tile.dart';
 
-class History extends StatelessWidget {
-  const History({Key? key}) : super(key: key);
+class HistoryScreen extends StatelessWidget {
+  const HistoryScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +41,7 @@ class History extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Expanded(
-              child:
-                  // ListView.builder(
-                  //   shrinkWrap: true,
-                  //   itemCount: 10,
-                  //   itemBuilder: (context, index) =>
-                  BlocBuilder<PricesCubit, PricesState>(
+              child: BlocBuilder<PricesCubit, PricesState>(
                 builder: (context, state) {
                   if (state is! PricesLoaded) {
                     return const Center(

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import '/models/price.dart';
-import '/repositories/price_repository.dart';
+import '/logic/repositories/price_repository.dart';
 
 part 'prices_state.dart';
 

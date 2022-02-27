@@ -15,7 +15,6 @@ class PriceService {
       );
       return jsonDecode(response.body) as List;
     } catch (e) {
-      print(e);
       return [];
     }
   }

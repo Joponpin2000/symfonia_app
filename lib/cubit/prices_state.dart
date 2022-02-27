@@ -9,6 +9,4 @@ class PricesLoaded extends PricesState {
   final List<Price> prices;
 
   PricesLoaded({required this.prices});
-
-
 }

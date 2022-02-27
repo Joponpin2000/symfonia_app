@@ -1,4 +1,4 @@
-import '/services/price.dart';
+import '/logic/services/price.dart';
 
 import '/models/price.dart';
 

@@ -2,7 +2,7 @@ class Price {
   String id;
   String name;
   String image;
-  // int currentPrice;
+  String currentPrice;
   double priceChange;
   double atl;
   int marketCap;
@@ -12,7 +12,7 @@ class Price {
       : id = json['id'],
         name = json['name'],
         image = json['image'],
-        // currentPrice = json['current_price'],
+        currentPrice = json['current_price'].toString(),
         priceChange = json['price_change_24h'],
         atl = json['atl'],
         marketCap = json['market_cap'],
