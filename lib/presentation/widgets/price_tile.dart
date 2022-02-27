@@ -22,8 +22,8 @@ class PriceTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.18,
-                  height: 110,
+                  width: MediaQuery.of(context).size.width * 0.16,
+                  height: 95,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
@@ -36,7 +36,7 @@ class PriceTile extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.43,
+                  width: MediaQuery.of(context).size.width * 0.45,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
