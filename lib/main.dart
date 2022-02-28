@@ -16,6 +16,7 @@ class SymfoniaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       title: 'Symfonia',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: router.generateRoute,

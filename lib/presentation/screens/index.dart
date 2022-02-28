@@ -19,6 +19,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: BlocBuilder<NavigationCubit, NavigationState>(
           builder: (context, state) {
         state = (state as NavigationInitial);
